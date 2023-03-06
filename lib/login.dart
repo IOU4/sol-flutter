@@ -11,6 +11,19 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  var inputDecoration = (String labelText, IconData icon) => InputDecoration(
+        prefixIcon: Icon(icon),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(width: 2, color: (Colors.brown[400])!),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+        ),
+        labelText: labelText,
+      );
+
+  final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20))));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,40 +49,27 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 100.0),
             TextField(
               controller: _usernameController,
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.person_outline),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: (Colors.brown[400])!),
-                  borderRadius: const BorderRadius.all(Radius.circular(20)),
-                ),
-                labelText: 'Moblie num',
-              ),
+              decoration: inputDecoration('username', Icons.person_outline),
             ),
-            // spacer
             const SizedBox(height: 12.0),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.lock_outline),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: (Colors.brown[400])!),
-                  borderRadius: const BorderRadius.all(Radius.circular(20)),
-                ),
-                labelText: 'Password',
-              ),
+              decoration: inputDecoration('password', Icons.lock_outline),
               obscureText: true,
             ),
-            ButtonBar(
-              children: <Widget>[
-                ElevatedButton(
-                  onPressed: () {
-                    // TODO: invoke login
-                    // ignore: avoid_print
-                    print("login ....");
-                  },
-                  child: const Text('login'),
-                ),
-              ],
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.maxFinite,
+              height: 50.0,
+              child: ElevatedButton(
+                onPressed: () {
+                  // TODO: invoke login
+                  // ignore: avoid_print
+                  print("login ....");
+                },
+                style: buttonStyle,
+                child: const Text('login'),
+              ),
             ),
             const SizedBox(height: 16),
             Row(
