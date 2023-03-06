@@ -23,14 +23,13 @@ class _LoginPageState extends State<LoginPage> {
             Column(
               children: <Widget>[
                 const SizedBox(height: 16.0),
-                Text(
-                  'MOROCCAN TO \n STAND',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      letterSpacing: -1,
-                      fontSize: 20,
-                      color: Colors.grey[900],
-                      fontStyle: FontStyle.italic),
+                Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 60,
+                      child: Image.asset('assets/sol-logo.png'),
+                    )
+                  ],
                 ),
               ],
             ),
