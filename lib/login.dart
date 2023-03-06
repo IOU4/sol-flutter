@@ -82,9 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // TODO: got to register
-                    // ignore: avoid_print
-                    print("regiser ...");
+                    Navigator.pushNamed(context, '/register');
                   },
                   child: Row(
                     children: const [
