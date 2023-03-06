@@ -11,7 +11,7 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  var inputDecoration = (String labelText, IconData icon) => InputDecoration(
+  get inputDecoration => (String labelText, IconData icon) => InputDecoration(
         prefixIcon: Icon(icon),
         border: OutlineInputBorder(
           borderSide: BorderSide(width: 2, color: (Colors.brown[400])!),
@@ -27,7 +27,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red[50],
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
