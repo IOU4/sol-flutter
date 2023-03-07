@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -19,6 +20,15 @@ class _LoginPageState extends State<LoginPage> {
         ),
         labelText: labelText,
       );
+
+  void _finishLogin() {
+    Navigator.pushAndRemoveUntil<void>(
+      context,
+      MaterialPageRoute<void>(
+          builder: (BuildContext context) => const AppHome()),
+      ModalRoute.withName('/'),
+    );
+  }
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       shape: const RoundedRectangleBorder(
@@ -62,9 +72,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 50.0,
               child: ElevatedButton(
                 onPressed: () {
-                  // TODO: invoke login
-                  // ignore: avoid_print
-                  print("login ....");
+                  _finishLogin();
                 },
                 style: buttonStyle,
                 child: const Text('login'),
