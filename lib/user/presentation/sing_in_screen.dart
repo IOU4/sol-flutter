@@ -121,8 +121,17 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        color: Colors.transparent,
+        child: Text(
+          "all rights reserved @2023",
+          style: Theme.of(context).textTheme.labelSmall,
+          textAlign: TextAlign.center,
         ),
       ),
     );
