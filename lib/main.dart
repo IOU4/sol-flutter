@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home.dart';
+import 'package:myapp/theme.dart';
 import 'package:myapp/user/presentation/sing_in_screen.dart';
 import 'package:myapp/user/presentation/sing_up_screen.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(),
+      theme: themeData,
       // darkTheme: ThemeData.dark(),
       title: "demo app",
       home: const AppHome(),
