@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home.dart';
-import 'package:myapp/login.dart';
-import 'package:myapp/register.dart';
+import 'package:myapp/user/presentation/sing_in_screen.dart';
+import 'package:myapp/user/presentation/sing_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
