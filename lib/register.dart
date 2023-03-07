@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home.dart';
+import 'package:myapp/util/input_data.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -14,14 +15,27 @@ class _RegisterPageState extends State<RegisterPage> {
   final _passwordController = TextEditingController();
   final _passwordConfirmationController = TextEditingController();
 
-  get inputDecoration => (String labelText, IconData icon) => InputDecoration(
-        prefixIcon: Icon(icon),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(width: 2, color: (Colors.brown[400])!),
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
-        ),
-        labelText: labelText,
-      );
+  late List<InputData> _inputs;
+  _RegisterPageState() {
+    _inputs = [
+      InputData(
+          icon: Icons.email_outlined,
+          label: "email",
+          controller: _emailController),
+      InputData(
+          icon: Icons.person_outlined,
+          label: "usename",
+          controller: _usernameController),
+      InputData(
+          icon: Icons.lock_open_outlined,
+          label: "password",
+          controller: _passwordController),
+      InputData(
+          icon: Icons.lock_outlined,
+          label: "confirm password",
+          controller: _passwordConfirmationController)
+    ];
+  }
 
   void _finishRegister() {
     Navigator.pushAndRemoveUntil<void>(
@@ -58,35 +72,31 @@ class _RegisterPageState extends State<RegisterPage> {
               ],
             ),
             const SizedBox(height: 100.0),
-            TextField(
-              controller: _emailController,
-              decoration: inputDecoration('email', Icons.email_outlined),
-            ),
-            const SizedBox(height: 10.0),
-            TextField(
-              controller: _usernameController,
-              decoration: inputDecoration('username', Icons.person_outline),
-            ),
-            const SizedBox(height: 10.0),
-            TextField(
-              controller: _passwordController,
-              decoration: inputDecoration('password', Icons.lock_open_outlined),
-              obscureText: true,
-            ),
-            const SizedBox(height: 10.0),
-            TextField(
-              controller: _passwordConfirmationController,
-              decoration:
-                  inputDecoration('confirm password', Icons.lock_outlined),
-            ),
+            for (var input in _inputs)
+              Column(
+                children: [
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: input.controller,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(input.icon),
+                      border: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(width: 2, color: (Colors.brown[400])!),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
+                      ),
+                      labelText: input.label,
+                    ),
+                  ),
+                ],
+              ),
             const SizedBox(height: 16),
             SizedBox(
               width: double.maxFinite,
               height: 50.0,
               child: ElevatedButton(
-                onPressed: () {
-                  _finishRegister();
-                },
+                onPressed: _finishRegister,
                 style: buttonStyle,
                 child: const Text('create account'),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home.dart';
+import 'package:myapp/util/input_data.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,6 +13,20 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  late List<InputData> _inputs;
+
+  _LoginPageState() {
+    _inputs = [
+      InputData(
+          icon: Icons.person_outlined,
+          label: "username",
+          controller: _usernameController),
+      InputData(
+          icon: Icons.lock_outlined,
+          label: "password",
+          controller: _passwordController)
+    ];
+  }
   get inputDecoration => (String labelText, IconData icon) => InputDecoration(
         prefixIcon: Icon(icon),
         border: OutlineInputBorder(
@@ -56,24 +71,30 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: 100.0),
-            TextField(
-              controller: _usernameController,
-              decoration: inputDecoration('username', Icons.person_outline),
-            ),
-            const SizedBox(height: 12.0),
-            TextField(
-              controller: _passwordController,
-              decoration: inputDecoration('password', Icons.lock_outline),
-              obscureText: true,
-            ),
+            for (var input in _inputs)
+              Column(
+                children: [
+                  const SizedBox(height: 12.0),
+                  TextField(
+                    controller: input.controller,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(input.icon),
+                      border: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(width: 2, color: (Colors.brown[400])!),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20))),
+                      labelText: input.label,
+                    ),
+                  )
+                ],
+              ),
             const SizedBox(height: 16),
             SizedBox(
               width: double.maxFinite,
               height: 50.0,
               child: ElevatedButton(
-                onPressed: () {
-                  _finishLogin();
-                },
+                onPressed: _finishLogin,
                 style: buttonStyle,
                 child: const Text('login'),
               ),
