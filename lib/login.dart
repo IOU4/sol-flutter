@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/register');
+                    Navigator.pushReplacementNamed(context, '/register');
                   },
                   child: Row(
                     children: const [
