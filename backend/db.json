@@ -1,0 +1,64 @@
+{
+  "students": [
+    {
+      "id": "001",
+      "name": "John Smith",
+      "email": "john.smith@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "002",
+      "name": "Emily Davis",
+      "email": "emily.davis@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "003",
+      "name": "William Johnson",
+      "email": "william.johnson@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "004",
+      "name": "Sophia Lee",
+      "email": "sophia.lee@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "005",
+      "name": "David Kim",
+      "email": "david.kim@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "006",
+      "name": "Mia Rodriguez",
+      "email": "mia.rodriguez@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "007",
+      "name": "Ethan Martinez",
+      "email": "ethan.martinez@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "008",
+      "name": "Avery Hernandez",
+      "email": "avery.hernandez@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "009",
+      "name": "Olivia Perez",
+      "email": "olivia.perez@youcode.ma",
+      "password": "secret"
+    },
+    {
+      "id": "010",
+      "name": "Daniel Wilson",
+      "email": "daniel.wilson@youcode.ma",
+      "password": "secret"
+    }
+  ]
+}
