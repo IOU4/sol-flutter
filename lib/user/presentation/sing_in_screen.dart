@@ -27,15 +27,6 @@ class _LoginPageState extends State<LoginPage> {
           controller: _passwordController)
     ];
   }
-  get inputDecoration => (String labelText, IconData icon) => InputDecoration(
-        prefixIcon: Icon(icon),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(width: 2, color: (Colors.brown[400])!),
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
-        ),
-        labelText: labelText,
-      );
-
   void _finishLogin() {
     Navigator.pushAndRemoveUntil<void>(
       context,
