@@ -10,7 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   late List<InputData> _inputs;
@@ -19,8 +19,8 @@ class _LoginPageState extends State<LoginPage> {
     _inputs = [
       InputData(
           icon: Icons.person_outlined,
-          label: "username",
-          controller: _usernameController),
+          label: "email",
+          controller: _emailController),
       InputData(
           icon: Icons.lock_outlined,
           label: "password",
