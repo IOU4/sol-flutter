@@ -30,7 +30,14 @@ class _LoginPageState extends State<LoginPage> {
   void _finishLogin(BuildContext context) {
     Auth(email: _emailController.text, password: _passwordController.text)
         .login()
-        .then((value) => {Navigator.pushReplacementNamed(context, '/')});
+        .onError((error, stackTrace) => false)
+        .then((res) => {
+              if (res)
+                Navigator.pushReplacementNamed(context, '/')
+              else
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(const SnackBar(content: Text("invalid data")))
+            });
   }
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
