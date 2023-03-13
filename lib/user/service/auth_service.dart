@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 import 'package:localstorage/localstorage.dart';
 
 class Auth {
@@ -13,18 +14,17 @@ class Auth {
     await Future.delayed(const Duration(seconds: 2));
     LocalStorage storage = LocalStorage("auth.json");
     await storage.ready;
-    print("logged: ${storage.getItem("logged")}");
     return storage.getItem("logged") == true;
   }
 
   Future<bool> login() async {
-    print("email $email");
-    print("password $password");
     var url = Uri.http("192.168.8.88:8084", "/students",
         {"email": email, "password": password});
     final storage = LocalStorage("auth.json");
     var res = await http.get(url);
     if (res.statusCode == 200) {
+      var users = convert.jsonDecode(res.body);
+      if (users.isEmpty) return false;
       await Future.delayed(const Duration(seconds: 2));
       await storage.ready;
       storage.setItem("logged", true);
@@ -32,4 +32,16 @@ class Auth {
     }
     return false;
   }
+}
+
+class User {
+  int id;
+  String name;
+  String email;
+  String password;
+  User(
+      {required this.id,
+      required this.name,
+      required this.email,
+      required this.password});
 }
