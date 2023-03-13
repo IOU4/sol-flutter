@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/home.dart';
 import 'package:myapp/user/service/auth_service.dart';
 import 'package:myapp/util/input_data.dart';
 
@@ -33,7 +34,10 @@ class _LoginPageState extends State<LoginPage> {
         .onError((error, stackTrace) => false)
         .then((res) => {
               if (res)
-                Navigator.pushReplacementNamed(context, '/')
+                Navigator.of(context)
+                    .pushReplacement(MaterialPageRoute(builder: (context) {
+                  return const AppHome();
+                }))
               else
                 ScaffoldMessenger.of(context)
                     .showSnackBar(const SnackBar(content: Text("invalid data")))
