@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/home.dart';
+import 'package:myapp/user/service/auth_service.dart';
 import 'package:myapp/util/input_data.dart';
 
 class LoginPage extends StatefulWidget {
@@ -27,13 +27,10 @@ class _LoginPageState extends State<LoginPage> {
           controller: _passwordController)
     ];
   }
-  void _finishLogin() {
-    Navigator.pushAndRemoveUntil<void>(
-      context,
-      MaterialPageRoute<void>(
-          builder: (BuildContext context) => const AppHome()),
-      ModalRoute.withName('/'),
-    );
+  void _finishLogin(BuildContext context) {
+    Auth(email: _emailController.text, password: _passwordController.text)
+        .login()
+        .then((value) => {Navigator.pushReplacementNamed(context, '/')});
   }
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
@@ -85,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
               width: double.maxFinite,
               height: 50.0,
               child: ElevatedButton(
-                onPressed: _finishLogin,
+                onPressed: () => _finishLogin(context),
                 style: buttonStyle,
                 child: const Text('login'),
               ),
