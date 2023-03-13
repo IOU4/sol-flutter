@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/home.dart';
 import 'package:myapp/theme.dart';
-import 'package:myapp/user/presentation/sing_in_screen.dart';
-import 'package:myapp/user/presentation/sing_up_screen.dart';
+import 'package:myapp/user/presentation/auth_page.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -17,12 +15,7 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       // darkTheme: ThemeData.dark(),
       title: "demo app",
-      home: const AppHome(),
-      routes: {
-        '/login': (context) => const LoginPage(),
-        '/register': (context) => const RegisterPage(),
-      },
-      initialRoute: "/login",
+      home: const AuthPage(),
       debugShowCheckedModeBanner: false,
     );
   }
