@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  bool _isLoading = false;
   late List<InputData> _inputs;
 
   _LoginPageState() {
@@ -25,10 +25,12 @@ class _LoginPageState extends State<LoginPage> {
       InputData(
           icon: Icons.lock_outlined,
           label: "password",
-          controller: _passwordController)
+          controller: _passwordController,
+          obsecure: true)
     ];
   }
   void _finishLogin(BuildContext context) {
+    setState(() => _isLoading = true);
     Auth(email: _emailController.text, password: _passwordController.text)
         .login()
         .onError((error, stackTrace) => false)
@@ -41,7 +43,8 @@ class _LoginPageState extends State<LoginPage> {
               else
                 ScaffoldMessenger.of(context)
                     .showSnackBar(const SnackBar(content: Text("invalid data")))
-            });
+            })
+        .then((value) => setState(() => _isLoading = false));
   }
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
@@ -85,6 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                               const BorderRadius.all(Radius.circular(20))),
                       labelText: input.label,
                     ),
+                    obscureText: input.obsecure,
                   )
                 ],
               ),
@@ -121,6 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
+            if (_isLoading) const LinearProgressIndicator(),
           ],
         ),
       ),
