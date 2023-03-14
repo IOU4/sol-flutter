@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/home/navigation_bar.dart';
 
 class AppHome extends StatelessWidget {
   const AppHome({super.key});
@@ -9,6 +10,7 @@ class AppHome extends StatelessWidget {
       body: Center(
         child: Text("Hello World!", textDirection: TextDirection.ltr),
       ),
+      bottomNavigationBar: AppNavigation(),
     );
   }
 }
