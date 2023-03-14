@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:myapp/home/index_state.dart';
 
-class AppNavigation extends StatefulWidget {
+class AppNavigation extends ConsumerStatefulWidget {
   const AppNavigation({super.key});
 
   @override
-  State<AppNavigation> createState() => _AppNavigationState();
+  ConsumerState<AppNavigation> createState() => _AppNavigationState();
 }
 
-class _AppNavigationState extends State<AppNavigation> {
-  int _currentIndex = 0;
-
+class _AppNavigationState extends ConsumerState<AppNavigation> {
   final _destinations = [
     const NavigationDestination(icon: Icon(Icons.home_outlined), label: 'home'),
     const NavigationDestination(
@@ -24,7 +24,9 @@ class _AppNavigationState extends State<AppNavigation> {
   Widget build(BuildContext context) {
     return NavigationBar(
       destinations: _destinations,
-      onDestinationSelected: (index) => setState(() => _currentIndex = index),
+      onDestinationSelected: (index) {
+        ref.read(navigationIndexProvider.notifier).set(index);
+      },
     );
   }
 }
