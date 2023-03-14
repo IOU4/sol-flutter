@@ -13,9 +13,9 @@ class _AppNavigationState extends ConsumerState<AppNavigation> {
   final _destinations = [
     const NavigationDestination(icon: Icon(Icons.home_outlined), label: 'home'),
     const NavigationDestination(
-        icon: Icon(Icons.book_outlined), label: 'resources'),
+        icon: Icon(Icons.list_alt_outlined), label: 'briefs'),
     const NavigationDestination(
-        icon: Icon(Icons.pin_outlined), label: 'briefs'),
+        icon: Icon(Icons.book_outlined), label: 'resources'),
     const NavigationDestination(
         icon: Icon(Icons.person_outline), label: 'profile')
   ];
