@@ -22,8 +22,10 @@ class _AppNavigationState extends ConsumerState<AppNavigation> {
 
   @override
   Widget build(BuildContext context) {
+    final currIndex = ref.watch(navigationIndexProvider);
     return NavigationBar(
       destinations: _destinations,
+      selectedIndex: currIndex,
       onDestinationSelected: (index) {
         ref.read(navigationIndexProvider.notifier).set(index);
       },
