@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/home.dart';
+import 'package:myapp/home/home.dart';
 import 'package:myapp/user/service/auth_service.dart';
 import 'package:myapp/util/input_data.dart';
 
