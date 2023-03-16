@@ -1,64 +1,136 @@
 {
   "students": [
     {
-      "id": "001",
+      "id": "1",
       "name": "John Smith",
       "email": "john.smith@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "002",
+      "id": "2",
       "name": "Emily Davis",
       "email": "emily.davis@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "003",
+      "id": "3",
       "name": "William Johnson",
       "email": "william.johnson@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "004",
+      "id": "4",
       "name": "Sophia Lee",
       "email": "sophia.lee@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "005",
+      "id": "5",
       "name": "David Kim",
       "email": "david.kim@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "006",
+      "id": "6",
       "name": "Mia Rodriguez",
       "email": "mia.rodriguez@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "007",
+      "id": "7",
       "name": "Ethan Martinez",
       "email": "ethan.martinez@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "008",
+      "id": "8",
       "name": "Avery Hernandez",
       "email": "avery.hernandez@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "009",
+      "id": "9",
       "name": "Olivia Perez",
       "email": "olivia.perez@youcode.ma",
       "password": "secret"
     },
     {
-      "id": "010",
+      "id": "10",
       "name": "Daniel Wilson",
       "email": "daniel.wilson@youcode.ma",
       "password": "secret"
+    }
+  ],
+  "briefs": [
+    {
+      "id": 1,
+      "title": "Project A",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-03-20",
+      "deadline": "2023-04-15"
+    },
+    {
+      "id": 2,
+      "title": "Project B",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-04-01",
+      "deadline": "2023-04-30"
+    },
+    {
+      "id": 3,
+      "title": "Project C",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-04-10",
+      "deadline": "2023-05-05"
+    },
+    {
+      "id": 4,
+      "title": "Project D",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-04-20",
+      "deadline": "2023-05-15"
+    },
+    {
+      "id": 5,
+      "title": "Project E",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-05-01",
+      "deadline": "2023-05-31"
+    },
+    {
+      "id": 6,
+      "title": "Project F",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-05-10",
+      "deadline": "2023-06-05"
+    },
+    {
+      "id": 7,
+      "title": "Project G",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-05-20",
+      "deadline": "2023-06-15"
+    },
+    {
+      "id": 8,
+      "title": "Project H",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-06-01",
+      "deadline": "2023-06-30"
+    },
+    {
+      "id": 9,
+      "title": "Project I",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-06-10",
+      "deadline": "2023-07-05"
+    },
+    {
+      "id": 10,
+      "title": "Project J",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ex non enim auctor gravida eget vel erat.",
+      "launchDate": "2023-06-20",
+      "deadline": "2023-07-15"
     }
   ]
 }
