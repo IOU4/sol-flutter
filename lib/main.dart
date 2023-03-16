@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: themeData,
       // darkTheme: ThemeData.dark(),
-      title: "demo app",
+      title: "simplonline",
       home: const AuthPage(),
       debugShowCheckedModeBanner: false,
     );
