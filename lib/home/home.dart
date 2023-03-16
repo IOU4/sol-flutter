@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:myapp/briefs/briefs_screen.dart';
+import 'package:myapp/briefs/getting_briefs.dart';
 import 'package:myapp/home/index_state.dart';
 import 'package:myapp/home/navigation_bar.dart';
 import 'package:myapp/profile/profile_screen.dart';
@@ -17,7 +17,7 @@ class AppHome extends ConsumerWidget {
         const Center(
           child: Text("Home page"),
         ),
-        const Briefs(),
+        const GetBriefs(),
         const Resources(),
         const Profile(),
       ][index],
