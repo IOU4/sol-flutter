@@ -4,5 +4,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    volumes:
+      - ./backend/db.json:/app/db.json
     ports:
       - 8084:3000
